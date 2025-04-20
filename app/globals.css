@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* GitHub Light Theme Colors */
+  --foreground-rgb: 36, 41, 47;
+  --background-rgb: 255, 255, 255;
+
+  --background: 0 0% 100%;
+  --foreground: 215 14% 16%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 215 14% 16%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 215 14% 16%;
+
+  /* GitHub Blue */
+  --primary: 212 92% 45%;
+  --primary-foreground: 0 0% 100%;
+
+  /* GitHub Gray */
+  --secondary: 210 14% 97%;
+  --secondary-foreground: 215 14% 16%;
+
+  /* Muted Gray */
+  --muted: 210 14% 97%;
+  --muted-foreground: 215 14% 45%;
+
+  /* Subtle Gray */
+  --accent: 210 14% 97%;
+  --accent-foreground: 215 14% 16%;
+
+  /* GitHub Red */
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+
+  /* GitHub Border Color */
+  --border: 210 14% 89%;
+  --input: 210 14% 89%;
+
+  /* GitHub Focus Ring */
+  --ring: 212 92% 45%;
+
+  /* GitHub Chart Colors */
+  --chart-1: 212 92% 45%;
+  --chart-2: 137 55% 36%;
+  --chart-3: 0 72% 51%;
+  --chart-4: 24 86% 48%;
+  --chart-5: 264 67% 51%;
+
+  --radius: 0.375rem;
+}
+
+.dark {
+  /* GitHub Dark Theme Colors */
+  --background: 215 14% 10%;
+  --foreground: 210 14% 89%;
+
+  --card: 215 14% 10%;
+  --card-foreground: 210 14% 89%;
+
+  --popover: 215 14% 10%;
+  --popover-foreground: 210 14% 89%;
+
+  /* GitHub Blue */
+  --primary: 212 92% 45%;
+  --primary-foreground: 0 0% 100%;
+
+  /* GitHub Dark Gray */
+  --secondary: 215 14% 13%;
+  --secondary-foreground: 210 14% 89%;
+
+  /* Muted Dark Gray */
+  --muted: 215 14% 13%;
+  --muted-foreground: 215 14% 65%;
+
+  /* Subtle Dark Gray */
+  --accent: 215 14% 13%;
+  --accent-foreground: 210 14% 89%;
+
+  /* GitHub Red */
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+
+  /* GitHub Dark Border */
+  --border: 215 14% 16%;
+  --input: 215 14% 16%;
+
+  /* GitHub Focus Ring */
+  --ring: 212 92% 45%;
+
+  /* GitHub Dark Chart Colors */
+  --chart-1: 212 92% 45%;
+  --chart-2: 137 55% 36%;
+  --chart-3: 0 72% 51%;
+  --chart-4: 24 86% 48%;
+  --chart-5: 264 67% 51%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* GitHub-style Typography */
+  h1 {
+    @apply text-2xl font-semibold tracking-tight;
+  }
+  h2 {
+    @apply text-xl font-semibold tracking-tight;
+  }
+  h3 {
+    @apply text-lg font-semibold;
+  }
+
+  /* GitHub-style Links */
+  a {
+    @apply text-[#0969da] hover:underline dark:text-[#58a6ff];
+  }
+
+  /* GitHub-style Buttons */
+  button {
+    @apply rounded-md font-semibold;
+  }
+
+  /* GitHub-style Cards */
+  .card {
+    @apply rounded-md border border-[#d0d7de] dark:border-[#30363d];
+  }
+}
+
+/* GitHub-style Custom Components */
+.gh-header {
+  @apply border-b border-[#d0d7de] dark:border-[#30363d] bg-[#f6f8fa] dark:bg-[#161b22] py-4;
+}
+
+.gh-nav {
+  @apply border-b border-[#d0d7de] dark:border-[#30363d] bg-white dark:bg-[#0d1117];
+}
+
+.gh-button-primary {
+  @apply bg-[#2da44e] text-white hover:bg-[#2c974b] dark:bg-[#238636] dark:hover:bg-[#2ea043];
+}
+
+.gh-button-secondary {
+  @apply bg-[#f6f8fa] text-[#24292f] border border-[#1b1f2426] hover:bg-[#f3f4f6] dark:bg-[#21262d] dark:text-[#c9d1d9] dark:border-[#30363d] dark:hover:bg-[#30363d];
+}
+
+.gh-input {
+  @apply border border-[#d0d7de] dark:border-[#30363d] rounded-md px-3 py-2 focus:border-[#0969da] focus:ring-1 focus:ring-[#0969da] dark:bg-[#0d1117] dark:focus:border-[#58a6ff] dark:focus:ring-[#58a6ff];
+}
+
+.gh-badge {
+  @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium bg-[#ddf4ff] text-[#0969da] dark:bg-[#388bfd26] dark:text-[#58a6ff];
+}
+
+.gh-card {
+  @apply rounded-md border border-[#d0d7de] dark:border-[#30363d] bg-white dark:bg-[#0d1117] shadow-sm;
+}
+
+/* GitHub-style Animations */
+@keyframes gh-pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.gh-pulse {
+  animation: gh-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* GitHub-style Tables */
+.gh-table {
+  @apply min-w-full divide-y divide-[#d0d7de] dark:divide-[#30363d];
+}
+
+.gh-table th {
+  @apply px-6 py-3 text-left text-xs font-medium text-[#57606a] dark:text-[#8b949e] uppercase tracking-wider bg-[#f6f8fa] dark:bg-[#161b22];
+}
+
+.gh-table td {
+  @apply px-6 py-4 whitespace-nowrap text-sm text-[#24292f] dark:text-[#c9d1d9];
+}
+
+/* GitHub-style Progress Bars */
+.gh-progress {
+  @apply bg-[#ddf4ff] dark:bg-[#388bfd26] rounded-full overflow-hidden;
+}
+
+.gh-progress-value {
+  @apply bg-[#0969da] dark:bg-[#58a6ff];
+}
